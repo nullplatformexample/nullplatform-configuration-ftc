@@ -1,0 +1,45 @@
+nrn          = "organization=:account=:namespace="
+project_id   = "gcp_project_id"
+dimension    = {}
+location     = "us-central1"
+domain_name  = "example.com"
+environments = [""]
+np_api_key   = ""
+####gitlab
+gitlab_slug              = "gitlab-account"
+gitlab_name              = ""
+gitlab_repository_prefix = ""
+repository_provider      = "gitlab"
+group_path               = ""
+access_token             = ""
+installation_url         = "https://gitlab.com"
+collaborators_config = { collaborators = [
+  { id   = "david.fernandez7"
+    role = "admin"
+    type = "user"
+  }]
+}
+###artifacts
+username     = "_json_key_base64"
+login_server = "us-central1-docker.pkg.dev/repository"
+path         = ""
+password     = ""
+cluster_name = ""
+tags = "environment:development"
+environment_tag = "development"
+nullplatform-agent-helm-version = "2.14.0"
+##prometheus
+nullplatform_port = 2025
+##externaldns
+extra_args = ["--cloudflare-proxied", "--cloudflare-dns-records-per-page=200"]
+dns_provider_name = "cloudflare"
+externa_dns_namespace = "kube-system"
+external_dns_version = "1.19.0"
+domain = "example.com" 
+txt_owner_id = "external-dns"
+cloudflare_token = ""
+#cert manager
+account_slug = ""
+hosted_zone_name = "example.com" 
+cloudflare_enabled = true
+cert_manager_config_version = "2.14.0"
