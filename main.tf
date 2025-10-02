@@ -1,6 +1,6 @@
 
 module "gcp" {
-  source       = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/gcp/cloud/gcp?ref=v2"
+  source       = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/gcp/cloud/gcp?ref=v2.0.0"
   nrn          = var.nrn
   project_id   = var.project_id
   dimensions   = var.dimension
@@ -11,7 +11,7 @@ module "gcp" {
 }
 
 module "code_repository" {
-  source                   = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/code_repository?ref=v2"
+  source                   = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/code_repository?ref=v2.0.0"
   git_provider             = "gitlab"
   gitlab_slug              = var.gitlab_slug
   gitlab_name              = var.gitlab_name
@@ -27,7 +27,7 @@ module "code_repository" {
 
 
 module "asset" {
-  source       = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/asset/docker-server?ref=v2"
+  source       = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/asset/docker-server?ref=v2.0.0"
   nrn          = var.nrn
   login_server = var.login_server
   path         = var.path
@@ -38,7 +38,7 @@ module "asset" {
 }
 
 module "agent" {
-    source     = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/gcp/agent?ref=v2"
+    source     = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/gcp/agent?ref=v2.0.0"
     nrn        = var.nrn
     np_api_key = var.np_api_key
     nullplatform-agent-helm-version = var.nullplatform-agent-helm-version
@@ -50,7 +50,7 @@ module "agent" {
 
 
 module "base" {
-    source = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/gcp/base?ref=v2"
+    source = "git::https://github.com/nullplatform/main-terraform-modules.git//nullplatform/gcp/base?ref=v2.0.0"
     nrn = var.nrn
     np_api_key = var.np_api_key
 
@@ -58,7 +58,7 @@ module "base" {
 }
 
 module "prometheus" {
-  source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/prometheus?ref=v2"
+  source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/prometheus?ref=v2.0.0"
   nullplatform_port = var.nullplatform_port
   nrn = var.nrn
   np_api_key = var.np_api_key
@@ -66,7 +66,7 @@ module "prometheus" {
 
 
 module "external_dns" {
-   source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/external-dns?ref=v2"
+   source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/external-dns?ref=v2.0.0"
    externa_dns_namespace = var.externa_dns_namespace
    external_dns_version = var.external_dns_version
    extra_args = var.extra_args
@@ -78,7 +78,7 @@ module "external_dns" {
 }
 
 module "cert_manager" {
-    source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/cert-manager?ref=v2"
+    source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/cert-manager?ref=v2.0.0"
     cert_manager_namespace = "cert-manager"
     cert_manager_version = "1.18.2"
     cert_manager_config_version = var.cert_manager_config_version
@@ -90,6 +90,6 @@ module "cert_manager" {
 }   
 
 module "istio" {
-    source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/istio?ref=v2"
+    source = "git::https://github.com/nullplatform/main-terraform-modules.git//workloads/istio?ref=v2.0.0"
 }
 
